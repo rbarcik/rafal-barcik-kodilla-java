@@ -2,23 +2,24 @@ package com.kodilla.testing.shape;
 
 public class Square implements Shape {
     private String name;
-    private double field;
+    private double dimA;
 
-    public Square(String name, double field) {
+    public Square(String name, double dimA) {
         this.name = name;
-        this.field = field;
+        this.dimA = dimA;
     }
-
     public String getShapeName() {
         return this.name;
     }
     public double getField() {
-        return this.field;
+        double fieldS = Math.pow(this.dimA,2);
+        fieldS = Math.round(fieldS*100);
+        fieldS = fieldS / 100;
+        return fieldS;
     }
     public String toString(){
-        return getShapeName();
+        return getShapeName() + " field: " + getField();
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -26,16 +27,15 @@ public class Square implements Shape {
 
         Square square = (Square) o;
 
-        if (Double.compare(square.field, field) != 0) return false;
+        if (Double.compare(square.dimA, dimA) != 0) return false;
         return name.equals(square.name);
     }
-
     @Override
     public int hashCode() {
         int result;
         long temp;
         result = name.hashCode();
-        temp = Double.doubleToLongBits(field);
+        temp = Double.doubleToLongBits(dimA);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }

@@ -2,23 +2,25 @@ package com.kodilla.testing.shape;
 
 public class Triangle implements Shape {
     private String name;
-    private double field;
+    private double dimA;
 
-    public Triangle(String name, double field) {
+    public Triangle(String name, double dimA) {
         this.name = name;
-        this.field = field;
+        this.dimA = dimA;
     }
 
     public String getShapeName() {
         return this.name;
     }
     public double getField() {
-        return this.field;
+        double fieldT =  (Math.pow(this.dimA, 2)*Math.sqrt(3))/4;
+        fieldT = Math.round(fieldT*100);
+        fieldT = fieldT / 100;
+        return fieldT;
     }
     public String toString(){
-        return getShapeName();
+        return getShapeName() + " field: " + getField();
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -26,16 +28,15 @@ public class Triangle implements Shape {
 
         Triangle triangle = (Triangle) o;
 
-        if (Double.compare(triangle.field, field) != 0) return false;
+        if (Double.compare(triangle.dimA, dimA) != 0) return false;
         return name.equals(triangle.name);
     }
-
     @Override
     public int hashCode() {
         int result;
         long temp;
         result = name.hashCode();
-        temp = Double.doubleToLongBits(field);
+        temp = Double.doubleToLongBits(dimA);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }

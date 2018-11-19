@@ -22,22 +22,27 @@ public class ShapeCollector {
         return shapes.hashCode();
     }
     public static void addFigure(Shape shape){
-        //do nithing
+        shapes.add(shape);
     }
     public static boolean removeFigure(Shape shape){
-        //temporarily return true
-        return true;
+        boolean result = false;
+        if(shapes.contains(shape)){
+            shapes.remove(shape);
+            result = true;
+        }
+        return result;
     }
     public static Shape getFigure(int n){
-        //temporarily return false
-        return null;
+        Shape theShape = null;
+        if(n >= 0 && n < shapes.size()){
+            theShape = shapes.get(n);
+        }
+        return theShape;
     }
     public static ArrayList<Shape> showFigures(){
-        //temporarily return false
         return shapes;
     }
     public static int getShapeQuantity(){
-        // return 100 temporarily
-        return 100;
+        return shapes.size();
     }
 }

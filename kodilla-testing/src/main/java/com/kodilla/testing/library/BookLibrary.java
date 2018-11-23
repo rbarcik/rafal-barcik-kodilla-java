@@ -1,6 +1,7 @@
 package com.kodilla.testing.library;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class BookLibrary {
@@ -16,5 +17,14 @@ public class BookLibrary {
         if(resultList.size() > 20) return bookList;
         bookList = resultList;
         return bookList;
+    }
+    public List<Book> listBooksInHandsOf(LibraryUser libraryUser){
+        List<Book> bookListInHands = new LinkedList<Book>();
+        int booksQuantity = libraryDatabase.returnBooks(libraryUser);
+        for (int n = 1; n <= booksQuantity; n++) {
+            Book theBook = new Book("Tittle " + n, "Author " + n, 1970 + n);
+            bookListInHands.add(theBook);
+        }
+        return bookListInHands;
     }
 }

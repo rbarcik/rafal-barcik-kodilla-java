@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.testing.forum.statistisc.CalculateAdvStatisticsTestSuite" tests="9" skipped="0" failures="0" errors="0" timestamp="2018-11-24T08:50:24" hostname="idea-PC" time="0.173">
+  <properties/>
+  <testcase name="testUserNamesCounterIsZero" classname="com.kodilla.testing.forum.statistisc.CalculateAdvStatisticsTestSuite" time="0.161"/>
+  <testcase name="tesCommentsCounterIsZero" classname="com.kodilla.testing.forum.statistisc.CalculateAdvStatisticsTestSuite" time="0.001"/>
+  <testcase name="testCalculateAdvStatistics" classname="com.kodilla.testing.forum.statistisc.CalculateAdvStatisticsTestSuite" time="0.001"/>
+  <testcase name="testUserNamesCounterIsThousand" classname="com.kodilla.testing.forum.statistisc.CalculateAdvStatisticsTestSuite" time="0.002"/>
+  <testcase name="testPostCounterIsZero" classname="com.kodilla.testing.forum.statistisc.CalculateAdvStatisticsTestSuite" time="0.001"/>
+  <testcase name="testPostsCounterLessThanCommentsCounter" classname="com.kodilla.testing.forum.statistisc.CalculateAdvStatisticsTestSuite" time="0.001"/>
+  <testcase name="tesCommentsCounterIsThousand" classname="com.kodilla.testing.forum.statistisc.CalculateAdvStatisticsTestSuite" time="0.0"/>
+  <testcase name="testCommentsCounterLessThanPostsCounter" classname="com.kodilla.testing.forum.statistisc.CalculateAdvStatisticsTestSuite" time="0.001"/>
+  <testcase name="testPostCounterIsThousand" classname="com.kodilla.testing.forum.statistisc.CalculateAdvStatisticsTestSuite" time="0.002"/>
+  <system-out><![CDATA[This is the beginning of the tests.
+Preparing to execute test #1
+namescounter 0, postsCounter 0, commentsCounter 0, avgPostPerUser 0.0, avgCommentsPerUser 0.0, avgCommentsPerPost 0.0
+Preparing to execute test #2
+namescounter 0, postsCounter 0, commentsCounter 0, avgPostPerUser 0.0, avgCommentsPerUser 0.0, avgCommentsPerPost 0.0
+Preparing to execute test #3
+namescounter 4, postsCounter 100, commentsCounter 200, avgPostPerUser 25.0, avgCommentsPerUser 50.0, avgCommentsPerPost 2.0
+Preparing to execute test #4
+namescounter 1000, postsCounter 0, commentsCounter 0, avgPostPerUser 0.0, avgCommentsPerUser 0.0, avgCommentsPerPost 0.0
+Preparing to execute test #5
+namescounter 0, postsCounter 0, commentsCounter 0, avgPostPerUser 0.0, avgCommentsPerUser 0.0, avgCommentsPerPost 0.0
+Preparing to execute test #6
+namescounter 0, postsCounter 100, commentsCounter 200, avgPostPerUser 0.0, avgCommentsPerUser 0.0, avgCommentsPerPost 2.0
+Preparing to execute test #7
+namescounter 0, postsCounter 0, commentsCounter 1000, avgPostPerUser 0.0, avgCommentsPerUser 0.0, avgCommentsPerPost 0.0
+Preparing to execute test #8
+namescounter 0, postsCounter 300, commentsCounter 200, avgPostPerUser 0.0, avgCommentsPerUser 0.0, avgCommentsPerPost 0.0
+Preparing to execute test #9
+namescounter 0, postsCounter 1000, commentsCounter 0, avgPostPerUser 0.0, avgCommentsPerUser 0.0, avgCommentsPerPost 0.0
+All tests are finished.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

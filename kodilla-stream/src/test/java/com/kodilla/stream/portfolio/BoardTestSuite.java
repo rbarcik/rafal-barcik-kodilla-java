@@ -132,4 +132,23 @@ public class BoardTestSuite {
         //Then
         Assert.assertEquals(2, longTasks);
     }
+    @Test
+    public void testAddTaskListAverageWorkingOnTask(){
+        //Given
+        Board project = prepareTestData();
+
+        //When
+        List<TaskList> inProgressTasks = new ArrayList<>();
+        inProgressTasks.add(new TaskList("In progress"));
+        double averageWorking = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .map(t -> t.getCreated())
+                .map(daysWork -> LocalDate.now().compareTo(daysWork))
+                .mapToDouble(daysWork -> daysWork )
+                .average().getAsDouble();
+
+        //Then
+        Assert.assertEquals(10, averageWorking, 0);
+    }
 }

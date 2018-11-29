@@ -7,7 +7,7 @@ public class ExceptionHandling {
                 String result = secondChallenge.probablyIWillThrowException(3.0, 1.6);
                 System.out.println(result);
             } catch (Exception e){
-                System.out.println("Arror input data " + e);
+                System.out.println("Error input data " + e);
 
             } finally {
                 System.out.println("\n Thank you.");

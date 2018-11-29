@@ -10,7 +10,7 @@ public class ExceptionHandling {
                 System.out.println("Error input data " + e);
 
             } finally {
-                System.out.println("\n Thank you.");
+                System.out.println("\n  Thank you.");
             }
             }
         }

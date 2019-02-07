@@ -9,11 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CompanyDaoTestSuite {
     @Autowired
-    CompanyDao companyDao;
+    private CompanyDao companyDao;
+    @Autowired
+    private EmployeeDao employeeDao;
 
     @Test
     public void testSaveManyToMany(){
@@ -59,5 +63,47 @@ public class CompanyDaoTestSuite {
         } catch (Exception e) {
             //do nothing
         }
+    }
+    @Test
+    public void testRetrieveEmployeeWithLastame() {
+        //Given
+        Employee johnSmith = new Employee("John", "Smith");
+        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
+        employeeDao.save(johnSmith);
+        employeeDao.save(stephanieClarckson);
+        employeeDao.save(lindaKovalsky);
+        //When
+        int johnSmithId = johnSmith.getId();
+        int stephanieClarcksonId = stephanieClarckson.getId();
+        int lindaKovalskyId = lindaKovalsky.getId();
+        List<Employee> employeeWithName = employeeDao.retrieveEmployeeWithLastame("Smith");
+        //Then
+        Assert.assertEquals(1, employeeWithName.size());
+        //CleanUp
+        employeeDao.delete(johnSmithId);
+        employeeDao.delete(stephanieClarcksonId);
+        employeeDao.delete(lindaKovalskyId);
+    }
+    @Test
+    public void testRetrieveCompaniesBeginsOnThreeLetters() {
+        //Given
+        Company softwareMachine = new Company("Software Machine");
+        Company dataMaesters = new Company("Data Maesters");
+        Company greyMatter = new Company("Grey Matter");
+        companyDao.save(softwareMachine);
+        companyDao.save(dataMaesters);
+        companyDao.save(greyMatter);
+        //When
+        int softwareMachineId = softwareMachine.getId();
+        int dataMaestersId = dataMaesters.getId();
+        int greyMatterId = greyMatter.getId();
+        List<Company> companiesBeginsOnThreeLetters = companyDao.retrieveCompaniesWithNamesBegins("DatAAA");
+        //Then
+        Assert.assertEquals(1, companiesBeginsOnThreeLetters.size());
+        //CleanUp
+        companyDao.delete(softwareMachineId);
+        companyDao.delete(dataMaestersId);
+        companyDao.delete(greyMatterId);
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.spring.reader.ReaderTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-01-30T21:52:13" hostname="idea-PC" time="0.009">
+<testsuite name="com.kodilla.spring.reader.ReaderTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-05-06T20:39:03" hostname="idea-PC" time="0.009">
   <properties/>
   <testcase name="testRead" classname="com.kodilla.spring.reader.ReaderTestSuite" time="0.009"/>
   <system-out><![CDATA[Reading: The book number one
